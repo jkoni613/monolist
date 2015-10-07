@@ -1,0 +1,23 @@
+<title>欲しいものランキング</title>
+
+<div class="box">
+  <h2 class="box-title">欲しいものランキング</h2>
+  <table class="table-striped">
+    <thead>
+      <tr>
+      <th class="col-md-2">順位</th>
+      <th class="col-md-6">タイトル</th>
+      <th class="col-md-2">人数</th>
+      <th class="col-md-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><% @ranking_table.each do |t| %>
+        <td class="col-md-2"><%= t["ranking"] %>位</td>
+        <td class="col-md-6"><%= t["title"] %></td>
+        <td class="col-md-2"><%= t["count"] %>人</td>
+        <td class="col-md-2"><%=link_to "詳細", t["url"], class: "btn btn-info btn-sm" %></td>
+      </tr><% end %>
+    </tbody>
+  </table>
+</div>
